@@ -1,5 +1,5 @@
 <template>
-  <div class="page loginPage">
+  <div class="page loginRegisterPage">
       <loginForm
             :emailInputValue = "emailInputValue" 
             :passwordInputValue = "passwordInputValue"
@@ -24,11 +24,5 @@ export default {
 </script>
 
 <style>
-    .loginPage{
-        background-image: url('../assets/img/bg-img.jpg');
-        background-size: cover;
-        display: flex;
-        justify-content: left;
-        align-items: center;
-    }
+    @import './styles/loginRegisterPageStyles.scss';
 </style>
