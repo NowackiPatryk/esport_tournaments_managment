@@ -1,4 +1,8 @@
-# tournaments
+# tournament manager
+## What is this project?
+
+I'm creating this one to befriend with Vue+Nuxt stack.<br />
+This app is tournament managment system, where users can create their own tournaments or join to the others.
 
 ## Build Setup
 
@@ -17,4 +21,3 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
