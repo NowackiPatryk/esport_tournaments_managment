@@ -1,0 +1,90 @@
+<template>
+    <form class = 'loginForm'>
+        <div class = 'loginForm__contentWrapper'>
+            <textInput :defaultValue = "emailInputValue" />
+            <textInput :defaultValue = "passwordInputValue" :hidden = "true"/>
+            <p class = 'loginForm__contentWrapper__paragraph'>
+                Don't have account yet? <NuxtLink to = "/register"> Go to register </NuxtLink> 
+            </p>
+        </div>
+        <submitBtn btnText = 'Login' />
+    </form>
+</template>
+
+<script>
+import textInput from './textInput';
+import submitBtn from './submitBtn';
+
+export default {
+    components: {
+        textInput,
+        submitBtn,
+    },
+
+    props:{
+        emailInputValue: {
+            type: String,
+            required: true,
+        },
+        passwordInputValue: {
+            type: String,
+            required: true,
+        }
+    },
+
+    }
+</script>
+<style scoped lang = 'scss'>
+@import '../assets/globalScss/globals.scss';
+@import '../assets/globalScss/animations.scss';
+
+    .loginForm{
+        background-color: $color_dark;
+        border-radius: $default_border_radius;
+        position: relative;
+        @include appear_animation_starting_values;
+        @include use_appear;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        &__contentWrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 70%;
+        }
+
+        &__contentWrapper__paragraph{
+            margin: 0;
+            padding: 0;
+            color: $default_text_color;
+            font-size: .7rem;
+
+            a{
+                text-decoration: none;
+                color: $contrast_color;
+                font-weight: bold;
+            }
+        }
+
+    }
+
+    @media only screen and ( min-width: 320px ){
+        .loginForm{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            padding: $default_margin;
+        }
+    }
+
+    @media only screen and ( min-width: 1024px ){
+        .loginForm{
+          width: 25vw;
+          height: 35vh;
+        }
+    }
+</style>

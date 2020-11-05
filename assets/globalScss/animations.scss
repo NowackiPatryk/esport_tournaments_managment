@@ -1,0 +1,21 @@
+@mixin appear_animation_starting_values{
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+@keyframes appear{
+    from{
+        @include appear_animation_starting_values;
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@mixin use_appear{
+    animation: appear;
+    animation-duration: .6s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+}

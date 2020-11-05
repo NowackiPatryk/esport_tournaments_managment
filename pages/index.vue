@@ -6,7 +6,6 @@
 <script>
 export default {
   middleware: 'checkIfUserLogged',
-
 }
 </script>
 

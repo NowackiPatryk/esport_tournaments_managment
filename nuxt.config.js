@@ -14,6 +14,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    {
+      src: `~/assets/globalScss/globals.scss`,
+      lang: 'scss'
+    },
+    {
+      src: `~/assets/globalScss/animations.scss`,
+      lang: 'scss'
+    }
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -33,9 +41,14 @@ export default {
   modules: [
     'cookie-universal-nuxt',
     ['cookie-universal-nuxt', { alias: 'cookiz' }],
- ],
-
+  ],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    hotMiddleware: {
+      client: {
+        // turn off client overlay when errors are present
+        overlay: false
+      }
+    }
   }
 }
