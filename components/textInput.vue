@@ -4,11 +4,13 @@
         v-model = "inputValue" 
         class = 'textInput' 
         type = 'password'
+        @change = "emitValue"
         >
     <input 
         v-else
         v-model = "inputValue"
         class = 'textInput'
+        @change = "emitValue"
         >
 </template>
 
@@ -22,12 +24,19 @@ export default {
         hidden: {
             type: Boolean,
             required: false,
-        }
+        },
     },
+
     data: function(){
         return({
             inputValue: this.defaultValue,
         })
+    },
+
+    methods: {
+        emitValue(e){
+            this.$emit('input-update', e.target.value);
+        },
     }
 }
 </script>

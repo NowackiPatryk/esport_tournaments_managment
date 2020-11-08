@@ -1,9 +1,20 @@
 <template>
-    <form class = 'loginRegisterForm'>
+    <form class = 'loginRegisterForm' @submit.prevent = "handleFormSubmit">
         <div class = 'loginRegisterForm__contentWrapper'>
-            <textInput :defaultValue = "emailInputValue" />
-            <textInput :defaultValue = "passwordInputValue" :hidden = "true"/>
-            <textInput :defaultValue = "confirmPasswordInputValue" :hidden = "true"/>
+            <textInput 
+                :defaultValue = "emailInputValue"
+                @input-update = "updateEmail"
+                />
+            <textInput 
+                :defaultValue = "passwordInputvalue"
+                @input-update = "updatePassword"
+                :hidden = "true"
+                />
+            <textInput 
+                :defaultValue = "confirmPasswordInputValue"
+                :hidden = "true"
+                @input-update = "updateConfirmPassword"
+                />
             <p class = 'loginRegisterForm__contentWrapper__paragraph'>
                 Do you have an account?<NuxtLink to = "/login"> Log In! </NuxtLink> 
             </p>
@@ -22,20 +33,28 @@ export default {
         submitBtn,
     },
 
-    props:{
-        emailInputValue: {
-            type: String,
-            required: true,
-        },
-        passwordInputValue: {
-            type: String,
-            required: true,
-        },
-        confirmPasswordInputValue: {
-            type: String,
-            required: true,
-        }
+    data(){
+        return({
+            emailInputValue: this.$store.state.registerStore.emailInputValue,
+            passwordInputvalue: this.$store.state.registerStore.passwordInputvalue,
+            confirmPasswordInputValue: this.$store.state.registerStore.confirmPasswordInputValue,
+        })
     },
+
+    methods:{
+        updateEmail(value){
+            this.$store.commit('registerStore/updateEmail', value);
+        },
+        updatePassword(value){
+            this.$store.commit('registerStore/updatePassword', value);
+        },
+        updateConfirmPassword(value){
+            this.$store.commit('registerStore/updateConfirmPassword', value);
+        },
+        handleFormSubmit(email, password){
+            this.registerUser(email, password);
+        }
+    }
 
     }
 </script>

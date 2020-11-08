@@ -1,10 +1,6 @@
 <template>
   <div class="page loginRegisterPage">
-      <registerForm
-            :emailInputValue = "emailInputValue" 
-            :passwordInputValue = "passwordInputValue"
-            :confirmPasswordInputValue = "confirmPasswordInputValue"
-        />
+      <registerForm />
   </div>
 </template>
 
@@ -15,13 +11,6 @@ export default {
     components: {
         registerForm,
     },
-    data: function(){
-        return({
-            emailInputValue: 'Email',
-            passwordInputValue: 'Password',
-            confirmPasswordInputValue: 'Confirm password',
-        })
-    }
 }
 </script>
 
