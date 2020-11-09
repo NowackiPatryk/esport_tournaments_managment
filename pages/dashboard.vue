@@ -1,11 +1,36 @@
 <template>
-  <div class="container">
+  <div>
+    <dashboardLink 
+      text = "join team" 
+      size = "default" 
+      direction = "left" 
+      imageSrc = "join-team-image.jpeg"
+      path = '/jointeam'/>
+
+    <dashboardLink 
+      text = "create team" 
+      size = "default" 
+      direction = "right" 
+      imageSrc = "create-team-image.jpg"
+      path = '/createteam'/>
+
+    <dashboardLink 
+      text = "create tournament" 
+      size = "large" 
+      direction = "center" 
+      imageSrc = "create-tournament-image.jpg"
+      path = '/createtournament'/>
   </div>
 </template>
 
 <script>
-export default {
+import dashboardLink from '../components/dashboardLink';
 
+export default {
+  components: {
+    dashboardLink,
+
+  }
 }
 </script>
 
