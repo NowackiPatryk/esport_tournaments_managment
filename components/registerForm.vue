@@ -6,7 +6,7 @@
                 @input-update = "updateEmail"
                 />
             <textInput 
-                :defaultValue = "passwordInputvalue"
+                :defaultValue = "passwordInputValue"
                 @input-update = "updatePassword"
                 :hidden = "true"
                 />
@@ -33,12 +33,18 @@ export default {
         submitBtn,
     },
 
-    data(){
-        return({
-            emailInputValue: this.$store.state.registerStore.emailInputValue,
-            passwordInputvalue: this.$store.state.registerStore.passwordInputvalue,
-            confirmPasswordInputValue: this.$store.state.registerStore.confirmPasswordInputValue,
-        })
+    computed: {
+        emailInputValue(){
+            return this.$store.state.registerStore.emailInputValue;
+        },
+
+        passwordInputValue(){
+            return this.$store.state.registerStore.passwordInputValue;
+        },
+
+        confirmPasswordInputValue(){
+            return this.$store.state.registerStore.confirmPasswordInputValue;
+        }
     },
 
     methods:{
@@ -51,8 +57,9 @@ export default {
         updateConfirmPassword(value){
             this.$store.commit('registerStore/updateConfirmPassword', value);
         },
-        handleFormSubmit(email, password){
-            this.registerUser(email, password);
+        handleFormSubmit(){
+            this.registerUser(this.emailInputValue, this.passwordInputValue);
+            this.$router.push('/');
         }
     }
 

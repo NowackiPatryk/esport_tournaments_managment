@@ -8,7 +8,7 @@ Vue.mixin({
                 email: userEmail,
                 password: userPassword,
             }
-        
+            
             if(users){
                 users.push(user);
                 this.$cookies.set('users', users, {
@@ -22,20 +22,32 @@ Vue.mixin({
                     maxAge: 60*60*24*7
                 });
         
-            this.loginUser( user.id, user.email, user.password );
+            this.loginUser( user.email, user.id );
         },
         
-        loginUser( userEmail, userPassword, userId ){
+        loginUser( userEmail, userId ){
             const user = {
                 id: userId,
                 email: userEmail,
-                password: userPassword
             }
         
             this.$cookies.set('currentUser', user, {
                 path: '/',
                 maxAge: 60*60*24*7,
             })
+        },
+
+        getUser( email, password ){
+            const users = this.$cookies.get('users');
+            let takenUser = false;
+            users.forEach( user => {
+                if( user.email == email && user.password == password ){
+                    takenUser = { id: user.id, email: user.email };
+                    return;
+                }
+            })
+
+            return takenUser;
         }
     }
 })
