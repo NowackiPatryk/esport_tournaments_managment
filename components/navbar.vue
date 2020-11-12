@@ -1,51 +1,18 @@
 <template>
     <nav class = 'navbar'>
         <div class = 'navbar__leftSideBlock'>
-            <dropdownNavbarElement
-                name = "Teams"
-                :itemList = "[
-                    {
-                        name: 'Create',
-                        routeUrl: '/createTeam',
-                    },
-
-                    {
-                        name: 'Join',
-                        routeUrl: '/joinTeam',
-                    },
-                ]"
-            />
-
-            <dropdownNavbarElement
-                name = "Tournaments"
-                :itemList = "[
-                    {
-                        name: 'Create',
-                        routeUrl: '/createTeam',
-                    },
-
-                    {
-                        name: 'Join',
-                        routeUrl: '/joinTeam',
-                    },
-                ]"
+            <dropdownNavbarElement 
+                v-for = "element in navbarRouteElements"
+                :key = "element.name"
+                :name = "element.name"
+                :itemList = "element.itemList"
             />
         </div>
 
         <div class = 'navbar__rightSideBlock'>
             <dropdownIconElement
                 iconSrc = "user_icon.png"
-                :itemList = "[
-                    {
-                    name: 'Change password',
-                    routeUrl: '/changePassword' 
-                    },
-
-                    {
-                        name: 'Log out',
-                        routeUrl: '/logout'
-                    }
-                ]"
+                :itemList = "userElements"
             />
         </div>
     </nav>
@@ -61,7 +28,55 @@ import dropdownIconElement from './dropdownIconElement';
             dropdownIconElement,
 
         },
+
+        data(){
+            return({
+                navbarRouteElements: [
+                    {
+                        name: 'Teams',
+                        itemList: [
+                            {
+                                name: 'Create',
+                                routeUrl: '/createteam',
+                            },
+
+                            {
+                                name: 'Join',
+                                routeUrl: '/jointeam',
+                            }
+                        ]
+                    },
+
+                    {
+                        name: 'Tournaments',
+                        itemList: [
+                            {
+                                name: 'Create',
+                                routeUrl: '/createtournament',
+                            },
+
+                            {
+                                name: 'Join',
+                                routeUrl: '/jointorunament',
+                            }
+                        ]
+                    },
+            ],
+
+            userElements: [
+                {
+                    name: 'Change password',
+                    routeUrl: '/changepassword' 
+                },
+
+                {
+                    name: 'Log out',
+                    routeUrl: '/logout'
+                },
+            ],
+        })
     }
+}
 
 </script>
 

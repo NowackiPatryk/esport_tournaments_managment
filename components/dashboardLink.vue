@@ -43,7 +43,7 @@ export default {
             sizeClass: `dashboardLink--${this.size}`,
             directionClass: `dashboardLink__overlay__text--${this.direction}`
         })
-    }
+    },
 }
 </script>
 
@@ -78,7 +78,7 @@ export default {
                 padding: 0;
                 text-transform: uppercase;
                 font-size: 3rem;
-                color: white;
+                color: $default_text_color;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
