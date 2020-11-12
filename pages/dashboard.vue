@@ -1,5 +1,6 @@
 <template>
   <div>
+    <navbar/>
     <dashboardLink 
       text = "join team" 
       size = "default" 
@@ -25,10 +26,12 @@
 
 <script>
 import dashboardLink from '../components/dashboardLink';
+import navbar from '../components/navbar';
 
 export default {
   components: {
     dashboardLink,
+    navbar,
 
   }
 }
