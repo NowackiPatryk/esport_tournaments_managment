@@ -4,11 +4,13 @@
             <textInput 
                 :defaultValue = "emailInputValue"
                 @input-update = "updateEmail"
+                name = "Email"
                 />
             <textInput 
                 :defaultValue = "passwordInputValue"
                 @input-update = "updatePassword"
                 :hidden = "true"
+                name = "Password"
                 />
             <p class = 'loginRegisterForm__contentWrapper__paragraph'>
                 Don't have account yet? <NuxtLink to = "/register"> Go to register </NuxtLink> 

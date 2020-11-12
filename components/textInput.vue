@@ -5,13 +5,15 @@
         class = 'textInput' 
         type = 'password'
         @change = "emitValue"
-        >
+        :placeholder = "name"
+    >
     <input 
         v-else
         v-model = "inputValue"
         class = 'textInput'
         @change = "emitValue"
-        >
+        :placeholder = "name"
+    >
 </template>
 
 <script>
@@ -21,10 +23,16 @@ export default {
             type: String,
             required: true,
         },
+
         hidden: {
             type: Boolean,
             required: false,
         },
+
+        name: {
+            type: String,
+            required: true,
+        }
     },
 
     data: function(){
@@ -43,6 +51,12 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/globalScss/globals.scss';
+
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
     .textInput {
         background-color: $color_light;
         outline: 0;

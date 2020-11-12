@@ -1,7 +1,7 @@
 export const state = () => ({
-    emailInputValue: 'Email',
-    passwordInputValue: 'Password',
-    confirmPasswordInputValue: 'Confirm password',
+    emailInputValue: '',
+    passwordInputValue: '',
+    confirmPasswordInputValue: '',
 })
 
 export const mutations = {

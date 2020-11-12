@@ -4,17 +4,20 @@
             <textInput 
                 :defaultValue = "emailInputValue"
                 @input-update = "updateEmail"
-                />
+                name = "Email"
+            />
             <textInput 
                 :defaultValue = "passwordInputValue"
                 @input-update = "updatePassword"
                 :hidden = "true"
-                />
+                name = "Password"
+            />
             <textInput 
                 :defaultValue = "confirmPasswordInputValue"
                 :hidden = "true"
                 @input-update = "updateConfirmPassword"
-                />
+                name = "Confirm password"
+            />
             <p class = 'loginRegisterForm__contentWrapper__paragraph'>
                 Do you have an account?<NuxtLink to = "/login"> Log In! </NuxtLink> 
             </p>
