@@ -21,3 +21,7 @@ $ npm run start
 $ npm run generate
 ```
 
+## Screenshots <br/>
+![image](./screenshots/screen_shot_1.png)<br />
+![image](./screenshots/screen_shot_2.png)<br />
+
