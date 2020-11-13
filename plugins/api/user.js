@@ -40,12 +40,14 @@ Vue.mixin({
         getUser( email, password ){
             const users = this.$cookies.get('users');
             let takenUser = false;
-            users.forEach( user => {
-                if( user.email == email && user.password == password ){
-                    takenUser = { id: user.id, email: user.email };
-                    return;
-                }
-            })
+            
+            if(users)
+                users.forEach( user => {
+                    if( user.email == email && user.password == password ){
+                        takenUser = { id: user.id, email: user.email };
+                        return;
+                    }
+                })
 
             return takenUser;
         }
