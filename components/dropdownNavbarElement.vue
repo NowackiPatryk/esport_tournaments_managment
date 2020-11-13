@@ -49,7 +49,7 @@ export default {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        margin-left: $default_margin;
+        margin-left: $large_margin;
         
             &:hover &__dropdown{
                     display: block;

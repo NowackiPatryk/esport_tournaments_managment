@@ -102,7 +102,7 @@ import dropdownIconElement from './dropdownIconElement';
         &__leftSideBlock{
             display: flex;
             justify-content: space-between;
-            min-width: 15%;
+            min-width: 20%;
         }
     }
 </style>
