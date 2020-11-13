@@ -6,18 +6,21 @@
                 @input-update = "updateEmail"
                 name = "Email"
             />
+
             <textInput 
                 :defaultValue = "passwordInputValue"
                 @input-update = "updatePassword"
                 :hidden = "true"
                 name = "Password"
             />
+
             <textInput 
                 :defaultValue = "confirmPasswordInputValue"
                 :hidden = "true"
                 @input-update = "updateConfirmPassword"
                 name = "Confirm password"
             />
+
             <p class = 'loginRegisterForm__contentWrapper__paragraph'>
                 Do you have an account?<NuxtLink to = "/login"> Log In! </NuxtLink> 
             </p>
@@ -54,15 +57,40 @@ export default {
         updateEmail(value){
             this.$store.commit('registerStore/updateEmail', value);
         },
+
         updatePassword(value){
             this.$store.commit('registerStore/updatePassword', value);
         },
+
         updateConfirmPassword(value){
             this.$store.commit('registerStore/updateConfirmPassword', value);
         },
+
+        validateFields(){
+            const emailStatus = this.validateField(this.emailInputValue, [ this.checkIfNotEmpty, this.checkIfIsEmailCorrect ]);
+            const passwordStatus = this.validateField( this.passwordInputValue, [this.checkIfNotEmpty, this.checkIfContainsNotAllowedChars, this.checkIfLongEnough, () => this.checkIfPasswordsMatches(this.passwordInputValue, this.confirmPasswordInputValue)]);
+
+            if( !emailStatus.ok ){
+                if( !process.server )
+                    alert(emailStatus.msg);
+                return false;
+            }
+
+            if( !passwordStatus.ok ){
+                if( !process.server )
+                    alert(passwordStatus.msg);
+                return false;
+            }
+            
+
+            return true;
+        }, 
+        
         handleFormSubmit(){
-            this.registerUser(this.emailInputValue, this.passwordInputValue);
-            this.$router.push('/');
+            if( this.validateFields() ){
+                this.registerUser(this.emailInputValue, this.passwordInputValue);
+                this.$router.push('/');
+            }
         }
     }
 
