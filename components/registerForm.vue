@@ -39,6 +39,22 @@ export default {
         submitBtn,
     },
 
+    data(){
+        return({
+            emailValidators: [
+                this.checkIfNotEmpty,
+                this.checkIfIsEmailCorrect,
+            ],
+
+            passwordValidators: [
+                this.checkIfNotEmpty,
+                this.checkIfContainsNotAllowedChars,
+                this.checkIfLongEnough,
+                () => this.checkIfPasswordsMatches( this.passwordInputValue, this.confirmPasswordInputValue )
+            ],
+        })
+    },
+
     computed: {
         emailInputValue(){
             return this.$store.state.registerStore.emailInputValue;
@@ -66,23 +82,23 @@ export default {
             this.$store.commit('registerStore/updateConfirmPassword', value);
         },
 
+        checkFieldStatus( status ){
+            if( !status.ok ){
+                if( !process.server )
+                    alert(status.msg);
+                return false;
+            }
+
+            return true;
+        },
+
         validateFields(){
-            const emailStatus = this.validateField(this.emailInputValue, [ this.checkIfNotEmpty, this.checkIfIsEmailCorrect ]);
-            const passwordStatus = this.validateField( this.passwordInputValue, [this.checkIfNotEmpty, this.checkIfContainsNotAllowedChars, this.checkIfLongEnough, () => this.checkIfPasswordsMatches(this.passwordInputValue, this.confirmPasswordInputValue)]);
+            const emailStatus = this.validateField(this.emailInputValue, this.emailValidators);
+            const passwordStatus = this.validateField( this.passwordInputValue, this.passwordValidators);
 
-            if( !emailStatus.ok ){
-                if( !process.server )
-                    alert(emailStatus.msg);
-                return false;
-            }
-
-            if( !passwordStatus.ok ){
-                if( !process.server )
-                    alert(passwordStatus.msg);
-                return false;
-            }
-            
-
+            if( !this.checkFieldStatus( emailStatus ) || !this.checkFieldStatus( passwordStatus ) )
+                return false
+                debugger;
             return true;
         }, 
         
