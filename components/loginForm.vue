@@ -49,9 +49,8 @@ export default {
         },
 
         handleFormSubmit(){
-            const user = this.getUser( this.emailInputValue, this.passwordInputValue )
-            if( user ){
-                this.loginUser( user.email, user.id );
+            this.$store.dispatch('userStore/loginUser', {email: this.emailInputValue, password: this.passwordInputValue})
+            if( this.$store.state.userStore.login.success ){
                 this.$router.push('/');
             }
             else

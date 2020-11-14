@@ -88,13 +88,13 @@ export default {
 
             if( !this.checkFieldStatus( emailStatus ) || !this.checkFieldStatus( passwordStatus ) )
                 return false
-                debugger;
+                
             return true;
         }, 
         
         handleFormSubmit(){
             if( this.validateFields() ){
-                this.registerUser(this.emailInputValue, this.passwordInputValue);
+                this.$store.dispatch('userStore/registerUser', { email: this.emailInputValue, password: this.passwordInputValue});
                 this.$router.push('/');
             }
         }
