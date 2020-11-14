@@ -6,12 +6,14 @@
                 @input-update = "updateEmail"
                 name = "Email"
                 />
+
             <textInput 
                 :defaultValue = "passwordInputValue"
                 @input-update = "updatePassword"
                 :hidden = "true"
                 name = "Password"
                 />
+                
             <p class = 'loginRegisterForm__contentWrapper__paragraph'>
                 Don't have account yet? <NuxtLink to = "/register"> Go to register </NuxtLink> 
             </p>
@@ -30,24 +32,20 @@ export default {
         submitBtn,
     },
 
-    computed: {
-        emailInputValue(){
-            return this.$store.state.loginStore.emailInputValue;
-        },
-
-        passwordInputValue(){
-            return this.$store.state.loginStore.passwordInputValue;
-        },
-        
+    data(){
+        return({
+            emailInputValue: '',
+            passwordInputValue: '',
+        })
     },
 
     methods:{
         updateEmail(value){
-            this.$store.commit('loginStore/updateEmail', value);
+            this.emailInputValue = value;
         },
 
         updatePassword(value){
-            this.$store.commit('loginStore/updatePassword', value);
+            this.passwordInputValue = value;
         },
 
         handleFormSubmit(){
