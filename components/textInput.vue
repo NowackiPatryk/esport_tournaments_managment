@@ -1,17 +1,9 @@
 <template>
     <input 
-        v-if = "hidden"
         v-model = "inputValue" 
         class = 'textInput' 
-        type = 'password'
-        @change = "emitValue"
-        :placeholder = "name"
-    >
-    <input 
-        v-else
-        v-model = "inputValue"
-        class = 'textInput'
-        @change = "emitValue"
+        :type = "hidden ? 'password' : 'text'"
+        @change = "$emit('input-update', $event.target.value)"
         :placeholder = "name"
     >
 </template>
@@ -40,12 +32,6 @@ export default {
             inputValue: this.defaultValue,
         })
     },
-
-    methods: {
-        emitValue(e){
-            this.$emit('input-update', e.target.value);
-        },
-    }
 }
 </script>
 
