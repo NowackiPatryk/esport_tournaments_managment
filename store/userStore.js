@@ -1,7 +1,4 @@
 export const state = () => ({
-    register: {
-        //actually empty
-    },
 
     login: {
         success: false,
