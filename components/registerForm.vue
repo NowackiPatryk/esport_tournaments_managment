@@ -52,34 +52,24 @@ export default {
                 this.checkIfLongEnough,
                 () => this.checkIfPasswordsMatches( this.passwordInputValue, this.confirmPasswordInputValue )
             ],
+
+            emailInputValue: '',
+            passwordInputValue: '',
+            confirmPasswordInputValue: '',
         })
-    },
-
-    computed: {
-        emailInputValue(){
-            return this.$store.state.registerStore.emailInputValue;
-        },
-
-        passwordInputValue(){
-            return this.$store.state.registerStore.passwordInputValue;
-        },
-
-        confirmPasswordInputValue(){
-            return this.$store.state.registerStore.confirmPasswordInputValue;
-        }
     },
 
     methods:{
         updateEmail(value){
-            this.$store.commit('registerStore/updateEmail', value);
+            this.emailInputValue = value;
         },
 
         updatePassword(value){
-            this.$store.commit('registerStore/updatePassword', value);
+            this.passwordInputValue = value;
         },
 
         updateConfirmPassword(value){
-            this.$store.commit('registerStore/updateConfirmPassword', value);
+            this.confirmPasswordInputValue = value;
         },
 
         checkFieldStatus( status ){
