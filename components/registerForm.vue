@@ -88,9 +88,3 @@ export default {
 
     }
 </script>
-<style scoped lang = 'scss'>
-@import '../assets/globalScss/globals.scss';
-@import '../assets/globalScss/animations.scss';
-@import './styles/loginRegisterFormStyles.scss';
-
-</style>

@@ -20,16 +20,3 @@ export default {
 }
 
 </script>
-
-<style lang="scss" scoped>
-@import '../assets/globalScss/globals.scss';
-
-    .navbarRouteElement{
-        & a {
-            text-decoration: none;
-            color: $default_text_color;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-    }
-</style>

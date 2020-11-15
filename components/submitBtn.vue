@@ -14,30 +14,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../assets/globalScss/globals.scss';
-.submitBtn{
-    width: 65%;
-    height: 15%;
-    background-color: $contrast_color;
-    color: $default_text_color;
-    outline: 0;
-    border: none;
-    border-radius: $default_border_radius;
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: $large_margin;
-    transition: transform .2s;
-    text-align: center;
-}
-.submitBtn:hover{
-    cursor: pointer;
-    transform: scale(1.06);
-}
-</style>

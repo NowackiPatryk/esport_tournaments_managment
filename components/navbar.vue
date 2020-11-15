@@ -79,30 +79,3 @@ import dropdownIconElement from './dropdownIconElement';
 }
 
 </script>
-
-<style scoped lang = "scss">
-@import '../assets/globalScss/globals.scss';
-
-    .navbar{
-        width: 100vw;
-        height: 8vh;
-        background-color: $color_dark;
-        color: $default_text_color;
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 999;
-        display: flex;
-        padding-left: $default_margin;
-        padding-right: $default_margin;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        &__leftSideBlock{
-            display: flex;
-            justify-content: space-between;
-            min-width: 20%;
-        }
-    }
-</style>
