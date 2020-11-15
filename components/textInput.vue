@@ -1,9 +1,8 @@
 <template>
     <input 
-        v-model = "inputValue" 
         class = 'textInput' 
         :type = "hidden ? 'password' : 'text'"
-        @change = "$emit('input-update', $event.target.value)"
+        @change = "$emit('input', $event.target.value)"
         :placeholder = "name"
     >
 </template>
@@ -11,11 +10,6 @@
 <script>
 export default {
     props: {
-        defaultValue: {
-            type: String,
-            required: true,
-        },
-
         hidden: {
             type: Boolean,
             required: false,
@@ -25,12 +19,6 @@ export default {
             type: String,
             required: true,
         }
-    },
-
-    data: function(){
-        return({
-            inputValue: this.defaultValue,
-        })
     },
 }
 </script>

@@ -2,14 +2,12 @@
     <form class = 'loginRegisterForm' @submit.prevent = "handleFormSubmit()">
         <div class = 'loginRegisterForm__contentWrapper'>
             <textInput 
-                :defaultValue = "emailInputValue"
-                @input-update = "updateEmail"
+                v-model = "emailInputValue"
                 name = "Email"
                 />
 
             <textInput 
-                :defaultValue = "passwordInputValue"
-                @input-update = "updatePassword"
+                v-model = "passwordInputValue"
                 :hidden = "true"
                 name = "Password"
                 />
@@ -40,13 +38,6 @@ export default {
     },
 
     methods:{
-        updateEmail(value){
-            this.emailInputValue = value;
-        },
-
-        updatePassword(value){
-            this.passwordInputValue = value;
-        },
 
         handleFormSubmit(){
             this.$store.dispatch('userStore/loginUser', {email: this.emailInputValue, password: this.passwordInputValue})

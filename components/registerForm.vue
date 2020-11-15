@@ -2,21 +2,18 @@
     <form class = 'loginRegisterForm' @submit.prevent = "handleFormSubmit">
         <div class = 'loginRegisterForm__contentWrapper'>
             <textInput 
-                :defaultValue = "emailInputValue"
-                @input-update = "updateEmail"
+                v-model = "emailInputValue"
                 name = "Email"
             />
 
             <textInput 
-                :defaultValue = "passwordInputValue"
-                @input-update = "updatePassword"
+                v-model = "passwordInputValue"
                 :hidden = "true"
                 name = "Password"
             />
 
             <textInput 
-                :defaultValue = "confirmPasswordInputValue"
-                :hidden = "true"
+                v-model = "confirmPasswordInputValue"
                 @input-update = "updateConfirmPassword"
                 name = "Confirm password"
             />
@@ -60,18 +57,7 @@ export default {
     },
 
     methods:{
-        updateEmail(value){
-            this.emailInputValue = value;
-        },
-
-        updatePassword(value){
-            this.passwordInputValue = value;
-        },
-
-        updateConfirmPassword(value){
-            this.confirmPasswordInputValue = value;
-        },
-
+        
         checkFieldStatus( status ){
             if( !status.ok ){
                 if( !process.server )
