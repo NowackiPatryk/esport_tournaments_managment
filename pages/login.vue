@@ -23,6 +23,3 @@ export default {
 }
 </script>
 
-<style>
-    @import './styles/loginRegisterPageStyles.scss';
-</style>

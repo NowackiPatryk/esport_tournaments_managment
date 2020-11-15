@@ -1,5 +1,7 @@
 @import './variables.scss';
 @import './animations.scss';
+
+//components
 @import './components/dashboardLink.scss';
 @import './components/dropdownNavbarElement.scss';
 @import './components/basicFormStyles.scss';
@@ -7,3 +9,6 @@
 @import './components/navbarRouteElement.scss';
 @import './components/submitBtn.scss';
 @import './components/textInput.scss';
+
+//pages
+@import './pages/loginRegister.scss';
