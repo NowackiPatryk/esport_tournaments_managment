@@ -14,8 +14,8 @@
 
             <textInput 
                 v-model = "confirmPasswordInputValue"
-                @input-update = "updateConfirmPassword"
                 name = "Confirm password"
+                :hidden = "true"
             />
 
             <p class = 'loginRegisterForm__contentWrapper__paragraph'>
