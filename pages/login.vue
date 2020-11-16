@@ -1,9 +1,6 @@
 <template>
   <div class="page loginRegisterPage">
-      <loginForm
-            :emailInputValue = "emailInputValue" 
-            :passwordInputValue = "passwordInputValue"
-        />
+      <loginForm />
   </div>
 </template>
 
@@ -14,12 +11,6 @@ export default {
     components: {
         loginForm,
     },
-    data: function(){
-        return({
-            emailInputValue: 'Email',
-            passwordInputValue: 'Password',
-        })
-    }
 }
 </script>
 

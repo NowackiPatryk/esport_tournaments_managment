@@ -1,4 +1,4 @@
-.loginRegisterForm{
+.defaultForm{
     background-color: $color_dark;
     border-radius: $default_border_radius;
     position: relative;
@@ -33,7 +33,7 @@
 }
 
 @media only screen and ( min-width: 320px ){
-    .loginRegisterForm{
+    .defaultForm{
         width: 100%;
         height: 100vh;
         display: flex;
@@ -42,7 +42,7 @@
 }
 
 @media only screen and ( min-width: 1024px ){
-    .loginRegisterForm{
+    .defaultForm{
       width: 25vw;
       height: 35vh;
     }

@@ -1,0 +1,17 @@
+@mixin page_left_sided_form{
+    background-size: cover;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+@mixin default_form_input{
+    background-color: $color_light;
+    outline: 0;
+    border: none;
+    padding: $default_margin;
+    width: 80%;
+    margin-bottom: $large_margin;
+    color: $default_text_color;
+    border-radius: $default_border_radius;
+}

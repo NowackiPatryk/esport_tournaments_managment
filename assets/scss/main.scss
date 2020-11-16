@@ -1,5 +1,6 @@
 @import './variables.scss';
 @import './animations.scss';
+@import './mixins.scss';
 
 //components
 @import './components/dashboardLink.scss';
@@ -9,6 +10,8 @@
 @import './components/navbarRouteElement.scss';
 @import './components/submitBtn.scss';
 @import './components/textInput.scss';
+@import './components/textArea.scss';
 
 //pages
 @import './pages/loginRegister.scss';
+@import './pages/createTeam.scss';

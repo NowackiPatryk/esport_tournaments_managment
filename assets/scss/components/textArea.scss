@@ -1,21 +1,17 @@
-.textInput {
+.textArea{
     @include default_form_input;
-    transition: transform .2s;
-}
-.textInput:focus{
-    transform: scale(1.06);
+    resize: none;
+    min-height: 60%;
 }
 
 @media only screen and (min-width: 320px){
-    .textInput{
-        height: 15%;
+    .textArea{
         padding: $small_margin;
     }
 }
 
 @media only screen and (min-width: 1024px){
-     .textInput{
-        height: 20%;
+     .textArea{
         padding: $default_margin;
     }
 }
