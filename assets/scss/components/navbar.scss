@@ -14,6 +14,11 @@
     justify-content: space-between;
     align-items: center;
 
+
+    &__leftSideBlock, &__rightSideBlock{
+        height: 100%;
+    }
+    
     &__leftSideBlock{
         display: flex;
         justify-content: space-between;

@@ -11,7 +11,7 @@
     margin-left: $default_margin;
     
         &:hover &__dropdown{
-                display: block;
+                display: inline-block;
         }
 
         &__icon{
@@ -34,11 +34,14 @@
             position: absolute;
             left: 0;
             top: 100%;
+            min-width: 100%;
             padding: $large_margin;
             background-color: $color_dark;
+            text-align: center;
 
                 & li{
                     margin-top: 25px;
+                    margin-bottom: 25px;
                 }
         }
 }
