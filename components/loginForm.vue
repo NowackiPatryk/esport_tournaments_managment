@@ -1,6 +1,6 @@
 <template>
-    <form class = 'loginRegisterForm' @submit.prevent = "handleFormSubmit()">
-        <div class = 'loginRegisterForm__contentWrapper'>
+    <form class = 'defaultForm' @submit.prevent = "handleFormSubmit()">
+        <div class = 'defaultForm__contentWrapper'>
             <textInput 
                 v-model = "emailInputValue"
                 name = "Email"
@@ -12,7 +12,7 @@
                 name = "Password"
                 />
                 
-            <p class = 'loginRegisterForm__contentWrapper__paragraph'>
+            <p class = 'defaultForm__contentWrapper__paragraph'>
                 Don't have account yet? <NuxtLink to = "/register"> Go to register </NuxtLink> 
             </p>
         </div>
