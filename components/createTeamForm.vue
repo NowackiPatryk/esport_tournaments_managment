@@ -46,6 +46,7 @@ export default {
                 teamName: this.teamNameInputValue,
                 teamTag: this.teamTagInputValue,
                 teamDescription: this.descriptionInputValue,
+                leaderId: this.$cookies.get('currentUser').id,
             };
 
             this.$store.dispatch('teamStore/createTeam', teamData);
