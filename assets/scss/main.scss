@@ -1,17 +1,19 @@
-@import './variables.scss';
-@import './animations.scss';
-@import './mixins.scss';
+@import "./variables.scss";
+@import "./animations.scss";
+@import "./mixins.scss";
 
 //components
-@import './components/dashboardLink.scss';
-@import './components/dropdownNavbarElement.scss';
-@import './components/basicFormStyles.scss';
-@import './components/navbar.scss';
-@import './components/navbarRouteElement.scss';
-@import './components/submitBtn.scss';
-@import './components/textInput.scss';
-@import './components/textArea.scss';
+@import "./components/dashboardLink.scss";
+@import "./components/dropdownNavbarElement.scss";
+@import "./components/basicFormStyles.scss";
+@import "./components/navbar.scss";
+@import "./components/navbarRouteElement.scss";
+@import "./components/submitBtn.scss";
+@import "./components/textInput.scss";
+@import "./components/textArea.scss";
+@import "./components/logoutBtn.scss";
+@import "./components/hamburgerBtn.scss";
 
 //pages
-@import './pages/loginRegister.scss';
-@import './pages/createTeam.scss';
+@import "./pages/loginRegister.scss";
+@import "./pages/createTeam.scss";

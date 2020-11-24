@@ -1,18 +1,18 @@
 <template>
-   <div class = "page createTeamPage">
-       <navbar />
-       <createTeamForm />
-    </div> 
+  <div class="page createTeamPage">
+    <createTeamForm />
+  </div>
 </template>
 
 <script>
-import navbar from '../components/navbar';
-import createTeamForm from '../components/createTeamForm';
+import navbar from "../components/navbar";
+import createTeamForm from "../components/createTeamForm";
 
 export default {
-    components:{
-        navbar,
-        createTeamForm,
-    },
-}
+  layout: "logged",
+  components: {
+    navbar,
+    createTeamForm
+  }
+};
 </script>

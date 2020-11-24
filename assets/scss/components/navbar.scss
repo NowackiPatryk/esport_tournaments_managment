@@ -1,27 +1,59 @@
-.navbar{
-    width: 100vw;
-    height: 8vh;
-    background-color: $color_dark;
-    color: $default_text_color;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 999;
+.navbar {
+  width: 100vw;
+  height: 8vh;
+  background-color: $color_dark;
+  color: $default_text_color;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  padding-left: $default_margin;
+  padding-right: $default_margin;
+  align-items: center;
+
+  &__leftSideBlock,
+  &__rightSideBlock {
     display: flex;
-    padding-left: $default_margin;
-    padding-right: $default_margin;
-    display: flex;
-    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1023px) {
+  .navbar {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-
-
-    &__leftSideBlock, &__rightSideBlock{
-        height: 100%;
+    text-align: center;
+    overflow-y: auto;
+    background-color: $color_dark_hard;
+    transition: transform 0.5s;
+    &__leftSideBlock,
+    &__rightSideBlock {
+      flex-direction: column;
     }
-    
-    &__leftSideBlock{
-        display: flex;
-        justify-content: space-between;
-        min-width: 20%;
+    &--hidden {
+      transform: translateX(-100%);
     }
+  }
+}
+
+@media only screen and (min-width: 1023px) {
+  .navbar {
+    justify-content: space-between;
+
+    &__leftSideBlock,
+    &__rightSideBlock {
+      height: 100%;
+    }
+
+    &__leftSideBlock {
+      justify-content: space-between;
+      min-width: 20%;
+    }
+    &__rightSideBlock {
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

@@ -1,0 +1,51 @@
+@mixin line {
+  width: 25px;
+  height: 3px;
+  background: $default_text_color;
+  transition: all 0.5s ease-in-out;
+}
+
+.menuBtn {
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border: 3px solid $default_text_color;
+  border-radius: 5px;
+  position: fixed;
+  right: $small_margin;
+  top: $small_margin;
+  background-color: $color_dark;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  display: none;
+
+  &__burger {
+    @include line;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      @include line;
+    }
+
+    &::before {
+      transform: translateY(-8px);
+    }
+
+    &::after {
+      transform: translateY(8px);
+    }
+  }
+
+  &__burger--active {
+    transform: rotate(45deg);
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1023px) {
+  .menuBtn {
+    display: flex;
+  }
+}
