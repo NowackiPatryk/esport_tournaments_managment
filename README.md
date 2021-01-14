@@ -1,3 +1,5 @@
+#This project is stopped </br></br>
+
 # tournament manager
 ## What is this project?
 
